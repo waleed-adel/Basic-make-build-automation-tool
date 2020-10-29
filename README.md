@@ -39,3 +39,4 @@
 	- For the progress bar group make its forecolor the same as its background color (Anything except white)
 	- For the progress percentage groups color it so that its forecolor and background color are different
 		
+- Check the output of the second step from the following path "ScreenShots/Step_2"
