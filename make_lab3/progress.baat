@@ -1,0 +1,24 @@
+@echo off
+
+rem check on the existence of progress.txt 
+IF EXIST "progress.txt" (
+rem if it exists then begin reading the file content
+for /F %%i in (progress.txt) do ( CALL :func_increment %%i progress.txt )
+GOTO :end
+) ELSE (
+echo 1 > progress.txt
+GOTO :end
+)
+
+rem this function is the one responsible for: 
+rem 1- incrementing the content/counter inside progress.txt
+rem 2- overwriting/updating the progress.txt with new incremented value 
+:func_increment
+rem %1=first param. passed to function  => file content/counter
+rem %2=second param. passed to function => name of file to be updated
+set /A counter=%1+1
+echo %counter% > %2
+GOTO :EOF
+
+:end
+
